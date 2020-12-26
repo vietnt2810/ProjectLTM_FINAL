@@ -1,0 +1,18 @@
+Bạn thích công việc kiểu?
+(A) Xã hội, giao tiếp
+(B) Nghiên cứu, thiết kế
+A
+0
+2
+Bạn tiếp xúc với 1 ng theo xu hướng
+(A) Khách quan
+(B) Chủ quan
+B
+0
+2
+Bạn đánh giá sự kiện dựa trên?
+(A) Ý nghĩa, gía trị
+(B) Tính logic
+A
+2
+2
