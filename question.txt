@@ -1,80 +1,210 @@
-Bạn thích công việc kiểu?
-(A) Xã hội, giao tiếp
-(B) Nghiên cứu, thiết kế
+Trong một buổi tiệc, bạn sẽ:
+(A) Nói chuyện với tất cả mọi người, kể cả người lạ
+(B) Nói chuyện với những người bạn quen
 A
-Bạn tiếp xúc với 1 ng theo xu hướng
-(A) Khách quan
-(B) Chủ quan
+0
+2
+Xu hướng nào trong bạn mạnh hơn?
+(A) Hướng tới những điều thực tế và cụ thể
+(B) Hướng tới các dự đoán trong tương lai
 A
-Bạn đánh giá sự kiện dựa trên?
-(A) Ý nghĩa, gía trị
-(B) Tính logic
+0
+2
+Tình huống nào khiến bạn cảm thấy tệ hơn?
+(A) Mọi thứ mông lung, không rõ ràng
+(B) Nhàm chán, đơn điệu
 A
-Bạn là người có tác phong?
-(A) Thong thả, thoải mái
-(B) Nhanh nhẹn đúng giờ
+0
+2
+Bạn thấy ấn tượng bởi:
+(A) Nguyên lý, nguyên tắc
+(B) Cảm xúc, tình cảm
 A
-Trong các cuộc giao tiếp bạn là người?
-(A) Chủ động bắt chuyện
-(B) Chỉ nói khi đc ng khác bắt chuyện
+0
+2
+Bạn có xu hướng nghiêng về:
+(A) Những gì có tính thuyết phục
+(B) Những gì cảm động
 A
-Bạn là người?
+0
+2
+Bạn thích làm việc:
+(A) Theo thời hạn (deadline)
+(B) Tùy hứng
+A
+0
+2
+Khi lựa chọn, bạn thường:
+(A) Khá cẩn thận, xem xét kĩ lưỡng
+(B) Tin vào cảm giác lúc lựa chọn
+A
+0
+2
+Tại các buổi gặp mặt, bạn sẽ:
+(A) Ở lại đến cuối buổi, càng lúc càng phấn khích
+(B) Ra về sớm và cảm thấy mệt
+A
+0
+2
+Tuýp người nào sẽ thu hút bạn hơn?
+(A) Người có đầu óc xét đoán, biết điều
+(B) Người có khả năng tưởng tượng phong phú
+A
+0
+2
+Bạn hứng thú hơn với:
+(A) Những việc thực tế xảy ra
+(B) Những việc có khả năng xảy ra
+A
+0
+2
+Khi đánh giá người khác, bạn thường:
+(A) Dựa trên các quy định, luật lệ
+(B) Dựa trên hoàn cảnh cụ thể
+A
+0
+2
+Khi tiếp cận người khác, bạn nghiêng về:
+(A) Tiếp cận khách quan
+(B) Tiếp cận cá nhân
+A
+0
+2
+Phong cách đúng với bạn hơn?
+(A) Đúng giờ 
+(B) Nhàn nhã, thoải mái
+A
+0
+2
+Bạn bồn chồn khi có những việc:
+(A) Chưa hoàn thiện
+(B) Đã hoàn thiện
+A
+0
+2
+Bạn là người:
+(A) Luôn nắm bắt kịp thời thông tin về các vấn đề của mọi người
+(B) Thường biết thông tin sau
+A
+0
+2
+Với các công việc thông thường, bạn nghiêng về cách:
+(A) Làm theo cách thông thường
+(B) Làm theo cách của riêng mình
+A
+0
+2
+Theo bạn, các nhà văn nên:
+(A) Viết những gì họ nghĩ, và nghĩ những gì họ viết, một cách rõ ràng
+(B) Diễn đạt sự việc bằng cách so sánh, liên tưởng
+A
+0
+2
+Điều gì lôi cuốn bạn hơn:
+(A) Sự nhất quán về tư duy, suy nghĩ
+(B) Sự hòa hợp trong các mối quan hệ con người
+A
+0
+2
+Bạn cảm thấy thoải mái hơn khi đưa ra nhận xét:
+(A) Một cách logic
+(B) Một cách có ý nghĩa, có giá trị
+A
+0
+2
+Bạn thích những điều:
+(A) Được định trước
+(B) Chưa được quyết định
+A
+0
+2
+Bạn là người:
+(A) Nghiêm túc và quyết đoán
+(B) Dễ tính, thoải mái
+A
+0
+2
+Khi nói chuyện điện thoại, bạn:
+(A) Hiếm khi băn khoăn đến những điều mình sẽ nói
+(B) Thường chuẩn bị trước những điều mình sẽ nói
+A
+0
+2
+Theo bạn, "các sự việc, sự kiện":
+(A) "Bản thân nó giải thích cho chính nó"
+(B) Nó là bằng chứng giải thích cho các quy tắc, quy luật
+A
+0
+2
+Những người có tầm nhìn xa:
+(A) Ở mức độ nào đó, họ thường gây khó chịu cho người khác
+(B) Khá thú vị
+A
+0
+2
+Bạn là người:
 (A) Có cái đầu lạnh
 (B) Có trái tim ấm
 A
-Tính cách của bạn?
-(A) Dễ chịu, thoải mái
-(B) Nghiêm chỉnh, quả quyết
-A
-Những người có tầm nhìn xa?
-(A) Khá thú vị
-(B) Khá khó hiểu
-A
-Một công việc nhàm chán khi?
-(A) Không có quy trình cụ thể
-(B) Không có tính sáng tạo
-A
-Bạn bị lôi cuốn bởi người?
-(A) Giàu trí tưởng tượng
-(B) Nắm bắt tình huống tốt
-A
-Bạn nhìn nhận vấn đề bởi? 
-(A) Sự liên tưởng
-(B) Khả năng lý luận phân tích
-A
-Bạn thấy tâm đắc với bản thân bởi tính cách?
-(A) Chắc chắn trong tư tưởng
-(B) Cống hiến hết mình
-A
-Trong cuộc sống bạn cảm thấy có hứng thú với?
-(A) Những điều không lường trước
-(B) Những thứ theo kế hoạch
-A
-Tính cách nào giống bạn hơn?
-(A) Kiên quyết
-(B) Nhẹ nhàng
-A
-Trong 2 điều sau điều nào tồi tệ hơn?
+0
+2
+Điều nào tồi tệ hơn:
 (A) Không công bằng
 (B) Tàn nhẫn
 A
-Đối với 1 vấn đề trong nhóm?
-(A) Độc lập giải quyết
-(B) Bàn bạc với mọi người
+0
+2
+Mọi người nên để các sự kiện xảy ra:
+(A) Theo sự lựa chọn và cân nhắc kĩ lưỡng
+(B) Diễn ra ngẫu nhiên, tự nhiên
 A
-Lựa chọn bạn thường?
-(A) Tuân theo chuẩn mực
-(B) Đôi lúc không rõ nguyên nhân
+0
+2
+Bạn cảm thấy thoải mái hơn khi:
+(A) Đã mua một thứ gì đó
+(B) Có khả năng và có sự lựa chọn để mua
 A
-Đối với những người mới gặp bạn thường?
-(A) Dễ bắt chuyện
-(B) Không biết nói gì
+0
+2
+Trong công ty, bạn là người:
+(A) Khởi xướng các câu chuyện
+(B) Đợi người khác khởi xướng để nói chuyện
 A
-Bạn bị hấp dẫn bởi? 
-(A) Sự hòa hợp với mọi người
-(B) Sự nhất quán trong suy nghĩ
+0
+2
+Những logic được mọi người chấp nhận, bạn sẽ:
+(A) Tin tưởng vào những điều đó và không nghi ngờ
+(B) Xem xét lại tính đúng đắn của những điều đó
 A
-Trong các cuộc trò chuyện bạn thường?
-(A) Thoải mái
-(B) Dè dặt
+0
+2
+Trẻ em thường không:
+(A) Tự mình phát huy hết năng lực
+(B) Thỏa mãn hết trí tưởng tượng của mình
 A
+0
+2
+Khi đưa ra các quyết định, bạn thiên về:
+(A) Các tiêu chuẩn, quy định
+(B) Cảm xúc, cảm nhận
+A
+0
+2
+Bạn nghiêng về tính cách:
+(A) Chắc chắn hơn là nhẹ nhàng
+(B) Nhẹ nhàng hơn là chắc chắn
+A
+0
+2
+Khả năng nào đáng khâm phục hơn:
+(A) Khả năng tổ chức và làm việc có phương pháp
+(B) Khả năng thích ứng và xoay xở trước mọi tình huống
+A
+0
+2
+Bạn đề cao:
+(A) Sự chắc chắn
+(B) Sự cởi mở
+A
+0
+2

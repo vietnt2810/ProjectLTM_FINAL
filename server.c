@@ -284,13 +284,13 @@ Question questionList[20];
 FILE *question;
 
 void readQuestion(){ // Gets and stores questions
-    if((question = fopen("questiontest.txt", "r"))==NULL){
+    if((question = fopen("question.txt", "r"))==NULL){
         printf("File doesn't exist!\n");
 		return;
     }
     else{
         while(!feof(question)){
-            for(int i=0; i<3; i++){ // Reads the questions from file
+            for(int i=0; i<75; i++){ // Reads the questions from file
                 fgets(setQuestion[i].question, 120, question);
                 fgets(setQuestion[i].choiceA, 70, question);
                 fgets(setQuestion[i].choiceB, 70, question);
@@ -306,7 +306,7 @@ void readQuestion(){ // Gets and stores questions
 void makeQuestion(){
     Question *buff;
     readQuestion();
-    for (int i = 0; i < 3; i++)
+    for (int i = 0; i < 75; i++)
     {
         buff = (Question *)malloc(sizeof(Question));
         strcpy((*buff).word, setQuestion[i].question);
@@ -389,7 +389,7 @@ int main(int argc, char* argv[]){
 
     makeQuestion();
     node *acc;
-	int loginVar = 0, optionVar = 0, i = 0, check = 0, readyCheck = 0;
+	int loginVar = 0, optionVar = 0, i = 0, readyCheck = 0;
     int count = 0, tempAPoint = 0, tempBPoint = 0;
     char username[20], password[20], tempPassword[20], tempUsername[20];
 	
@@ -485,10 +485,8 @@ int main(int argc, char* argv[]){
                             else if ((strcmp(buff,"A") == 0 || strcmp(buff,"a") == 0) && readyCheck == 1) {
                                 tempAPoint = atoi(questionList[i].aPoint);
                                 count = count + tempAPoint;
-                                check = check + 1;
-                                printf("%d\n",count);
                                 i = i + 1;
-                                if (i < 3) {
+                                if (i < 20) {
                                     sendMess(questionList[i].word, connfd, (struct sockaddr*) &cliaddr);
                                 }
                                 else {
@@ -500,9 +498,8 @@ int main(int argc, char* argv[]){
                             else if ((strcmp(buff,"B") == 0 || strcmp(buff,"b") == 0) && readyCheck == 1) {
                                 tempBPoint = atoi(questionList[i].bPoint);
                                 count = count + tempBPoint;
-                                printf("%d\n",count);
                                 i = i + 1;
-                                if (i < 3) {
+                                if (i < 20) {
                                     sendMess(questionList[i].word, connfd, (struct sockaddr*) &cliaddr);
                                 }
                                 else {
@@ -515,7 +512,7 @@ int main(int argc, char* argv[]){
                                 sendMess("--- Nhập sai rồi!!!! ---", connfd, (struct sockaddr*) &cliaddr);
                                 optionVar = 0;
                                 i = 0;
-                                check = 0;
+                                count = 0;
                             }
 
                             
@@ -541,29 +538,58 @@ int main(int argc, char* argv[]){
                             break;
 
                             case 4:
-                            printf("%d",count);
                             if (strcmp(buff,"OK") == 0) {
                                 if (count == 6) {
-                                    sendMess("Bạn là người hướng có thiên hướng trực giác.\n => Phù hợp với các nghề về kĩ thuật.\nBạn đã chơi xong, vui lòng nhập bất kỳ để trở về menu chính.", connfd, (struct sockaddr*) &cliaddr);
+                                    sendMess("Bạn thuộc nhóm người ENFJ (Người chỉ dạy - The Teacher).\nENFJ là những người giàu năng lượng, có định hướng và rất nhiều khả năng sâu bên trong. Họ có khả năng tự điều chỉnh theo nhu cầu của nhiều người khác trong tập thể. ENFJ luôn muốn kết nối chặt chẽ với mọi người, hỗ trợ và hợp tác với họ trong công việc. ENFJ cũng rất tham vọng, nhưng tham vọng của họ không phải cá nhân mà luôn hướng tới cộng đồng để giúp mọi người cùng tốt hơn.\n=> Phù hợp với các công việc có thiên hướng giúp đỡ người khác như là giáo viên, tư vấn viên sức khỏe, nhà tâm lý học,...", connfd, (struct sockaddr*) &cliaddr);
                                     optionVar = 5;
-                                    check = 0;
+                                    count = 0;
                                 }
                                 else if (count == 2) {
-                                    sendMess("Bạn là người lý trí. phần lí trí là phần được đánh giá cao nhất, nó có vai trò tìm hiểu các thông tin liên quan dựa trên các bộ phân tiêu chí đúng sai, trái hay phải. Sau đó, suy luận một cách logic mới trực tiếp cho đáp án cụ thể nhất, có căn cứ nhất, có khoa học nhất.\n => Phù hợp với các nghề về logic cao.\nBạn đã chơi xong, vui lòng nhập bất kỳ để trở về menu chính.", connfd, (struct sockaddr*) &cliaddr);
+                                    sendMess("Bạn thuộc nhóm người ESFJ (Người quan tâm - The Provider).\nNhóm tính cách này là những người thực tế, vị tha, giỏi làm việc nhóm, truyền thống và làm hết sức mình để hỗ trợ và bảo vệ lẽ phải và quyền lợi của họ, vì vậy họ có xu hướng rất tận tụy ngay cả khi họ đóng vai trò là người chủ trì của một bữa tiệc hoặc một nhân viên xã hội.\n=> Phù hợp với các công việc giúp đỡ người khác theo những cách thực tế như giáo dục sức khỏe, tư vấn viên, huấn luyện viên cá nhân, giáo viên, y tá, bác sĩ,...", connfd, (struct sockaddr*) &cliaddr);
                                     optionVar = 5;
-                                    check = 0;
+                                    count = 0;
+                                }
+                                else if (count == 2) {
+                                    sendMess("Bạn thuộc nhóm người ESFP (Người trình diễn - The Performer).\nBạnthích là trung tâm của sự chú ý và cũng thích những điều đơn giản nhất. Sự vui vẻ và bản chất nồng nhiệt của bạn thường rất hấp dẫn người khác, vì vậy bạn không bao giờ cạn ý tưởng và sự tò mò của bạn là vô hạn.\n=> Phù hợp với các công việc có tính nghệ thuật, môi trường làm việc xã hội năng động, linh hoạt, vui vẻ như là biên tập viên, ca sĩ, nhạc sĩ, thiết kế thời trang,...", connfd, (struct sockaddr*) &cliaddr);
+                                    optionVar = 5;
+                                    count = 0;
+                                }
+                                else if (count == 2) {
+                                    sendMess("Bạn thuộc nhóm người ESTJ (Người giám sát - The Supervisor).\nESTJ là những người lễ nghi, thực tế, chăm chỉ và trách nhiệm cao với một bộ óc nhạy bén trong việc kinh doanh, tổ chức quản lý cũng như con mắt nhìn người. Họ làm việc có trật tự, quy tắc và một hệ thống phương pháp rõ ràng.\n=> Phù hợp với các công việc quản lý để có thể đưa ra những quyết định về chính sách, thủ tục", connfd, (struct sockaddr*) &cliaddr);
+                                    optionVar = 5;
+                                    count = 0;
+                                }
+                                else if (count == 2) {
+                                    sendMess("Bạn thuộc nhóm người INFP (Người duy tâm - The Healer).\nINFP thường rất nhạy cảm, đồng cảm, có lòng vị tha và quan tâm đến sự phát triển của bản thân cũng như những người khác, và mong đợi mọi người cũng làm như vậy. Mang tư tưởng cá nhân nhưng cũng rất sáng tạo, linh hoạt và có hơi hướng nghệ thuật, và không hề phán xét trong việc đối xử với người khác.\n=> Phù hợp với các công việc tự chủ, sáng tạo, phù hợp với các giá trị cá nhân của họ để giúp đỡ, cải thiện hoàn cảnh cho người khác (chăm sóc sức khỏe, tâm lý học, xã hội học,...)", connfd, (struct sockaddr*) &cliaddr);
+                                    optionVar = 5;
+                                    count = 0;
+                                }
+                                else if (count == 2) {
+                                    sendMess("Bạn thuộc nhóm người ISFP (Người nghệ sĩ - The Composer).\nISFP là những người hòa bình, thân thiện, dễ tính. Với phương châm sống là để tận hưởng những khoảnh khắc của cuộc sống, họ luôn lạc quan, vui vẻ và linh hoạt một cách tự phát với dòng chảy  để tận hưởng những gì cuộc sống mang lại. ISFP có tính thẩm mỹ cao, luôn tìm kiếm cái đẹp, họ đặc biệt xuất sắc trong việc sử dụng sự sáng tạo, tài năng tự nhiên trong nghệ thuật.\n=> Phù hợp với các công việc có môi trường làm việc hợp tác, lịch sự nơi họ có thể làm việc một cách yên tĩnh với sự hỗ trợ khi cần thiết (ca sĩ, nhạc sĩ, thiết kế thời trang, kiến trúc sư, thợ mộc, thợ may,...)", connfd, (struct sockaddr*) &cliaddr);
+                                    optionVar = 5;
+                                    count = 0;
+                                }
+                                else if (count == 2) {
+                                    sendMess("Bạn thuộc nhóm người INFJ (Người cố vấn - The Counselors).\nINFJ là những người rất tận tâm và có định hướng rõ ràng, họ luôn tìm kiếm các ý nghĩa trong các mối quan hệ, ý tưởng và các sự kiện để mong muốn hiểu được bản thân và những người xung quanh. Bằng các kỹ năng trực quan, tầm nhìn và sự tự tin để phát triển cải thiện cuộc sống của mọi người.\n=> INFJ chú tâm đến điều mà họ thích làm nhất, đó là việc cải thiện tình trạng con người. Họ thích lập kế hoặch, tổ chức có quy trình, sáng tạo trong môi trường độc lập để thực hiện các sứ mệnh nhân đạo (giáo dục sức khỏe, tư vấn viên, nhà tâm lý học,...)", connfd, (struct sockaddr*) &cliaddr);
+                                    optionVar = 5;
+                                    count = 0;
+                                }
+                                else if (count == 2) {
+                                    sendMess("Bạn thuộc nhóm người ISFJ (Người che chở - The Protector).\nISFJ thật sự đề cao đến việc duy trì trật tự và sự hài hòa trong mọi khía cạnh của cuộc sống, họ là những người kiên định, tỉ mỉ và có trách nhiệm trong công việc. Mặc dù là người sống hướng nội nhưng họ rất giỏi trong việc quan sát và định hướng con người, họ không chỉ nhớ rõ các chi tiết của những người xung quanh mà con nhạy bén trong việc theo dõi cảm xúc của người khác.\n=> ISFJ chú tâm đến điều mà họ thích làm nhất, đó là việc giúp đỡ người khác theo những cách thực tế, có tổ chức, có sự theo dõi quan sát và xem kết quả (giáo dục sức khỏe, tư vấn viên, luật sư, y tá,...)", connfd, (struct sockaddr*) &cliaddr);
+                                    optionVar = 5;
+                                    count = 0;
                                 }
                                 else {
-                                    sendMess("Bạn là người có thiên hướng cảm xúc, phần cảm xúc của não bộ sẽ xem xét sự việc trên tổng thế các vấn đề cảm tính, yêu hay ghét, hận hay thu đồng thời các yếu tố đó có sự tác động qua lại lẫn nhau, không có một sự rạch ròi, đó là bản chất của vấn đề cảm xúc do não quyết định.\n => Phù hợp với các nghề về nghệ thuật.\nBạn đã chơi xong, vui lòng nhập bất kỳ để trở về menu chính.", connfd, (struct sockaddr*) &cliaddr);
+                                    sendMess("", connfd, (struct sockaddr*) &cliaddr);
                                     optionVar = 5;
-                                    check = 0;
+                                    count = 0;
                                 }
                             }
                             else {
                                 sendMess("--- Nhập sai rồi!!!! ---", connfd, (struct sockaddr*) &cliaddr);
                                 optionVar = 0;
                                 readyCheck = 0;
-                                check = 0;
+                                count = 0;
                             }
                             break;
 
