@@ -6,8 +6,8 @@
 #include <netinet/in.h>
 #include <arpa/inet.h>
 
-#define MAXLINE 1000
-#define MAX_LISTEN_QUEUE 1000
+#define MAXLINE 10000
+#define MAX_LISTEN_QUEUE 10000
 
 //////////////////////////////////////// Menu Function ////////////////////////////////////////
 void loginMenu() {
@@ -24,7 +24,7 @@ void mainMenu() {
 int main(int argc, char *argv[]){
     int sockfd, serverPortNum, sendBytes, rcvBytes;
     struct sockaddr_in servaddr;
-    char sendline[MAXLINE], recvline[MAXLINE], server_response[256], string1[100];
+    char sendline[MAXLINE], recvline[MAXLINE], server_response[10000], string1[10000];
 
     // create a socket for theo client
     if((sockfd = socket(AF_INET, SOCK_STREAM, 0)) < 0){

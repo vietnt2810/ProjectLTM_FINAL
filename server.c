@@ -7,8 +7,8 @@
 #include <unistd.h>
 #include <time.h>
 
-#define MAXLINE 100
-#define MAX_LISTEN_QUEUE 100
+#define MAXLINE 10000
+#define MAX_LISTEN_QUEUE 10000
 
 //////////////////////////////////////// Account ////////////////////////////////////////
 typedef struct node {
@@ -263,9 +263,9 @@ node *signout(){
 //////////////////////////////////////// Account ////////////////////////////////////////
 //////////////////////////////////////// Question ////////////////////////////////////////
 typedef struct bank{
-    char question[120];
-    char choiceA[70];
-    char choiceB[70];
+    char question[200];
+    char choiceA[200];
+    char choiceB[200];
     char answer[5];
     char aPoint[5];
     char bPoint[5];
@@ -279,8 +279,8 @@ typedef struct question
     char bPoint[5];
 }Question;
 
-Bank setQuestion[20];
-Question questionList[20];
+Bank setQuestion[70];
+Question questionList[70];
 FILE *question;
 
 void readQuestion(){ // Gets and stores questions
@@ -291,12 +291,12 @@ void readQuestion(){ // Gets and stores questions
     else{
         while(!feof(question)){
             for(int i=0; i<70; i++){ // Reads the questions from file
-                fgets(setQuestion[i].question, 120, question);
-                fgets(setQuestion[i].choiceA, 70, question);
-                fgets(setQuestion[i].choiceB, 70, question);
-                fgets(setQuestion[i].answer, 70, question);
-                fgets(setQuestion[i].aPoint, 70, question);
-                fgets(setQuestion[i].bPoint, 70, question);
+                fgets(setQuestion[i].question, 200, question);
+                fgets(setQuestion[i].choiceA, 200, question);
+                fgets(setQuestion[i].choiceB, 200, question);
+                fgets(setQuestion[i].answer, 5, question);
+                fgets(setQuestion[i].aPoint, 5, question);
+                fgets(setQuestion[i].bPoint, 5, question);
             }
         }
     }
@@ -323,6 +323,7 @@ void makeQuestion(){
         strcpy(questionList[i].answer, (*buff).answer);
         strcpy(questionList[i].aPoint, (*buff).aPoint);
         strcpy(questionList[i].bPoint, (*buff).bPoint);
+        // printf("%s\n",questionList[i].word);
         free(buff);
     }
 }
@@ -364,7 +365,7 @@ pid_t fork(void);
 
 int main(int argc, char* argv[]){
 
-
+    openFile();
 	pid_t pid;
     int listenfd, connfd, n, portNumber;
     pid_t childpid;
@@ -403,7 +404,7 @@ int main(int argc, char* argv[]){
 			
 			close(listenfd); 	             // child closes listening socket
 			while(n = recv(connfd, buff, MAXLINE, 0) > 0){
-                openFile();
+                // openFile();
                 if (strcmp(buff,"1") == 0 && loginVar == 0) {
                     loginVar = 1;
                     sendMess("--- Nhập tên tài khoản mới ---", connfd, (struct sockaddr*) &cliaddr);
@@ -565,7 +566,7 @@ int main(int argc, char* argv[]){
                                     count = 0;
                                 }
                                 else if (count > 26 && count <= 28) {
-                                    sendMess("Bạn thuộc nhóm người ISFP (Người nghệ sĩ - The Composer).\nISFP là những người hòa bình, thân thiện, dễ tính. Với phương châm sống là để tận hưởng những khoảnh khắc của cuộc sống, họ luôn lạc quan, vui vẻ và linh hoạt một cách tự phát với dòng chảy  để tận hưởng những gì cuộc sống mang lại. ISFP có tính thẩm mỹ cao, luôn tìm kiếm cái đẹp, họ đặc biệt xuất sắc trong việc sử dụng sự sáng tạo, tài năng tự nhiên trong nghệ thuật.\n=> Phù hợp với các công việc có môi trường làm việc hợp tác, lịch sự nơi họ có thể làm việc một cách yên tĩnh với sự hỗ trợ khi cần thiết (ca sĩ, nhạc sĩ, thiết kế thời trang, kiến trúc sư, thợ mộc, thợ may,...)", connfd, (struct sockaddr*) &cliaddr);
+                                    sendMess("Bạn thuộc nhóm người ISFP (Người nghệ sĩ - The Composer).\nISFP là những người hòa bình, thân thiện, dễ tính. Họ luôn lạc quan, vui vẻ và linh hoạt một cách tự phát với dòng chảy  để tận hưởng những gì cuộc sống mang lại. ISFP có tính thẩm mỹ cao, luôn tìm kiếm cái đẹp, họ đặc biệt xuất sắc trong việc sử dụng sự sáng tạo, tài năng tự nhiên trong nghệ thuật.\n=> Phù hợp với các công việc có môi trường làm việc hợp tác, lịch sự nơi họ có thể làm việc một cách yên tĩnh với sự hỗ trợ khi cần thiết (ca sĩ, nhạc sĩ, thiết kế thời trang, kiến trúc sư, thợ mộc, thợ may,...)", connfd, (struct sockaddr*) &cliaddr);
                                     optionVar = 5;
                                     count = 0;
                                 }
@@ -605,7 +606,7 @@ int main(int argc, char* argv[]){
                                     count = 0;
                                 }
                                 else if (count > 43 && count <= 46) {
-                                    sendMess("Bạn thuộc nhóm người INTP (Người kiến trúc sư - The Architect).\nINTP là những cá nhân trầm tính, chu đáo, có niềm đam mê mãnh liệt với phân tích logic, hệ thống phức tạp và thiết kế. Họ thường tò mò và thích tìm hiểu về các hệ thống, lý thuyết phức tạp và cách mọi thứ hoạt động. INTP thông thường không phải kiểu người truyền thống, họ có những suy nghĩ riêng và không chạy theo đám đông.\nINTP là người hoạt động độc lập tốt hoặc một nhóm nhỏ đồng nghiệp có năng lực, thông minh và logic. Họ thích một môi trường linh hoạt, cho phép họ xử lý các vấn đề một cách sáng tạo, không bị ràng buộc bởi các quy tắc truyền thống. Họ phù hợp với các nhóm ngành sau đây: IT, kỹ sư kỹ thuật, khoa học, kinh doanh - tài chính, giải trí - nghệ thuật(nhiếp ảnh giam, biên tập viên, nhạc sĩ,..),..", connfd, (struct sockaddr*) &cliaddr);
+                                    sendMess("Bạn thuộc nhóm người INTP (Người kiến trúc sư - The Architect).\nINTP là những cá nhân trầm tính, chu đáo, có niềm đam mê mãnh liệt với phân tích logic, hệ thống phức tạp và thiết kế. Họ thường tò mò và thích tìm hiểu về các hệ thống, lý thuyết phức tạp và cách mọi thứ hoạt động. INTP có những suy nghĩ riêng và không chạy theo đám đông.\nINTP là người hoạt động độc lập tốt hoặc một nhóm nhỏ đồng nghiệp có năng lực, thông minh và logic. Họ thích một môi trường linh hoạt, cho phép họ xử lý các vấn đề một cách sáng tạo, không bị ràng buộc bởi các quy tắc truyền thống. Họ phù hợp với các nhóm ngành sau đây: IT, kỹ sư kỹ thuật, khoa học, kinh doanh - tài chính, giải trí - nghệ thuật(nhiếp ảnh giam, biên tập viên, nhạc sĩ,..),..", connfd, (struct sockaddr*) &cliaddr);
                                     optionVar = 5;
                                     count = 0;
                                 }
