@@ -208,3 +208,213 @@ Bạn đề cao:
 A
 3
 0
+Đối mặt với những vấn đề mới, bạn thường
+(A) Thấy kích thích và hào hứng
+(B) Cảm thấy mệt mỏi
+A
+1
+2
+Thường thì bạn là:
+(A) Người thực tế
+(B) Người có khả năng tưởng tượng phong phú
+A
+3
+0
+Bạn thường có xu hướng xem người khác:
+(A) Có thể làm được việc gì hữu ích
+(B) Xem người khác sẽ nghĩ và cảm nhận như thế nào
+A
+2
+1
+Bạn cảm thấy thoải mái hơn khi:
+(A) Thảo luận một vân đề kĩ lưỡng, triệt để
+(B) Đạt được thỏa thuận, sự nhất trí về vấn đề
+A
+1
+2
+Cái đầu hay trái tim chi phối bạn nhiều hơn
+(A) Cái đầu
+(B) Trái tim
+A
+3
+0
+Bạn thích công việc:
+(A) Được giao trọn gói, làm xong hết rồi bàn giao
+(B) Công việc làm hàng ngày, theo lịch
+A
+1
+2
+Bạn có xu hướng tìm kiếm những điều:
+(A) Theo trật tự, thứ tự
+(B) Ngẫu nhiên
+A
+2
+1
+Bạn thích kiểu nào hơn:
+(A) Nhiều bạn bè với mức độ tiếp xúc ngắn gọn
+(B) Một vài bạn thân với mức độ tiếp xúc sâu
+A
+1
+2
+Bạn thường dựa vào:
+(A) Sự kiện, thông tin
+(B) Nguyên lí, nguyên tắc
+A
+1
+2
+Bạn hứng thú với việc gì hơn:
+(A) Sản xuất và phân phối
+(B) Thiết kế, nghiên cứu
+A
+1
+2
+Bạn thích được khen là:
+(A) Một người có logic rất tốt
+(B) Một người rất tình cảm, tinh tế
+A
+3
+0
+Bạn thấy điều nào ở mình giá trị hơn:
+(A) Kiên định, vững vàng
+(B) Toàn tâm, cống hiến
+A
+3
+1
+Bạn thường thích:
+(A) Một tuyên bố cuối cùng, không thay đổi
+(B) Một tuyên bố dự kiến, ban đầu
+A
+3
+0
+Bạn thấy thoải mái hơn:
+(A) Trước khi đưa ra quyết định
+(B) Sau khi đưa ra quyết định
+A
+1
+2
+Bạn có thấy mình:
+(A) Dễ dàng bắt chuyện với người lạ
+(B) Có ít điều để nói với người lạ
+A
+0
+3
+Bạn có xu hướng tin tưởng vào
+(A) Kinh nghiệm của mình
+(B) Linh cảm của mình
+A
+2
+1
+Bạn cho mình là người như thế nào?
+(A) Là người thực tế hơn là khéo léo, mưu trí
+(B) Là người khéo léo, mưu trí hơn là thực tế
+A
+3
+1
+Theo bạn ai sẽ là người đáng được khen ngợi:
+(A) Một người giàu lý trí
+(B) Một người giàu cảm xúc
+A
+3
+0
+Bạn có xu hướng nhiều hơn về:
+(A) Công bằng, vô tư
+(B) Thông cảm, đồng cảm
+A
+2
+0
+Mọi việc sẽ hợp lý hơn nếu:
+(A) Được chuẩn bị trước
+(B) Diễn ra tự nhiên
+A
+2
+1
+Mọi việc:
+(A) Có thể nói chuyện để giải quyết được
+(B) Nên để mọi việc diễn ra ngẫu nhiên theo điều kiện hoàn cảnh
+A
+1
+2
+Khi chuông điện thoại reo, bạn sẽ:
+(A) Là người đầu tiên nhấc máy để nghe
+(B) Hi vọng có người khác sẽ nhấc máy
+A
+3
+1
+Bạn đánh giá cao điều gì trong mình hơn:
+(A) Cảm nhận tốt các yếu tố thực tế
+(B) Trí tưởng tượng phong phú, rực rỡ
+A
+2
+1
+Bạn sẽ chú tâm hơn đến:
+(A) Các nguyên tắc, nguyên lý cơ bản
+(B) Các ngụ ý, hàm ý, ẩn ý
+A
+2
+1
+Bạn không thích những người:
+(A) Quá nồng nhiệt, thiết tha
+(B) Quá khách quan
+A
+3
+0
+Bạn sẽ đánh giá mình là người thế nào?
+(A) Thiết thực, ít bị chi phối bởi tình cảm
+(B) Từ tâm, đa cảm
+A
+3
+0
+Tình huống nào sẽ lôi cuốn bạn:
+(A) Tình huống rõ ràng, có kế hoạch
+(B) Tình huống không xác định, không có kế hoạch
+A
+2
+1
+Bạn là người có xu hướng nào hơn:
+(A) Theo thói quen
+(B) Hay thay đổi
+A
+2
+1
+Bạn có xu hướng:
+(A) Là người dễ tiếp cận
+(B) Ở mức độ nào đó là người kín đáo
+A
+0
+2
+Khi viết, bạn thích:
+(A) Viết theo hướng văn chương hơn
+(B) Viết theo số liệu, dữ liệu hơn
+A
+1
+3
+Điều gì khó thực hiện hơn:
+(A) Hiểu và chia sẻ với người khác
+(B) Sử dụng người khác
+A
+0
+2
+Bạn mong ước mình sẽ có thêm:
+(A) Lí trí suy xét rõ ràng
+(B) Tình thương, lòng trắc ẩn sâu sắc
+A
+2
+1
+Điều gì sẽ là lỗi lớn hơn:
+(A) Hành động bừa bãi, không cân nhắc
+(B) Hành động chỉ trích, phê phán
+A
+2
+1
+Bạn sẽ thích:
+(A) Sự kiện có kế hoạch trước
+(B) Sự kiện không có kế hoạch trước
+A
+2
+1
+Bạn thiên về xu hướng hành động:
+(A) Cân nhắc thận trọng
+(B) Tự nhiên, tự phát
+A
+3
+1
