@@ -290,7 +290,7 @@ void readQuestion(){ // Gets and stores questions
     }
     else{
         while(!feof(question)){
-            for(int i=0; i<75; i++){ // Reads the questions from file
+            for(int i=0; i<70; i++){ // Reads the questions from file
                 fgets(setQuestion[i].question, 120, question);
                 fgets(setQuestion[i].choiceA, 70, question);
                 fgets(setQuestion[i].choiceB, 70, question);
@@ -306,7 +306,7 @@ void readQuestion(){ // Gets and stores questions
 void makeQuestion(){
     Question *buff;
     readQuestion();
-    for (int i = 0; i < 75; i++)
+    for (int i = 0; i < 70; i++)
     {
         buff = (Question *)malloc(sizeof(Question));
         strcpy((*buff).word, setQuestion[i].question);
@@ -478,7 +478,7 @@ int main(int argc, char* argv[]){
                             case 1:
                             printf("%s",buff);
                             if (strcmp(buff,"READY") == 0) {
-                                randomize(questionList,3);
+                                randomize(questionList,70);
                                 sendMess(questionList[i].word, connfd, (struct sockaddr*) &cliaddr);
                                 readyCheck = 1;
                             }
@@ -539,77 +539,77 @@ int main(int argc, char* argv[]){
 
                             case 4:
                             if (strcmp(buff,"OK") == 0) {
-                                if (count == 6) {
+                                if (count <= 18) {
                                     sendMess("Bạn thuộc nhóm người ENFJ (Người chỉ dạy - The Teacher).\nENFJ là những người giàu năng lượng, có định hướng và rất nhiều khả năng sâu bên trong. Họ có khả năng tự điều chỉnh theo nhu cầu của nhiều người khác trong tập thể. ENFJ luôn muốn kết nối chặt chẽ với mọi người, hỗ trợ và hợp tác với họ trong công việc. ENFJ cũng rất tham vọng, nhưng tham vọng của họ không phải cá nhân mà luôn hướng tới cộng đồng để giúp mọi người cùng tốt hơn.\n=> Phù hợp với các công việc có thiên hướng giúp đỡ người khác như là giáo viên, tư vấn viên sức khỏe, nhà tâm lý học,...", connfd, (struct sockaddr*) &cliaddr);
                                     optionVar = 5;
                                     count = 0;
                                 }
-                                else if (count == 2) {
+                                else if (count > 18 && count <= 20) {
                                     sendMess("Bạn thuộc nhóm người ESFJ (Người quan tâm - The Provider).\nNhóm tính cách này là những người thực tế, vị tha, giỏi làm việc nhóm, truyền thống và làm hết sức mình để hỗ trợ và bảo vệ lẽ phải và quyền lợi của họ, vì vậy họ có xu hướng rất tận tụy ngay cả khi họ đóng vai trò là người chủ trì của một bữa tiệc hoặc một nhân viên xã hội.\n=> Phù hợp với các công việc giúp đỡ người khác theo những cách thực tế như giáo dục sức khỏe, tư vấn viên, huấn luyện viên cá nhân, giáo viên, y tá, bác sĩ,...", connfd, (struct sockaddr*) &cliaddr);
                                     optionVar = 5;
                                     count = 0;
                                 }
-                                else if (count == 2) {
+                                else if (count > 20 && count <= 22) {
                                     sendMess("Bạn thuộc nhóm người ESFP (Người trình diễn - The Performer).\nBạnthích là trung tâm của sự chú ý và cũng thích những điều đơn giản nhất. Sự vui vẻ và bản chất nồng nhiệt của bạn thường rất hấp dẫn người khác, vì vậy bạn không bao giờ cạn ý tưởng và sự tò mò của bạn là vô hạn.\n=> Phù hợp với các công việc có tính nghệ thuật, môi trường làm việc xã hội năng động, linh hoạt, vui vẻ như là biên tập viên, ca sĩ, nhạc sĩ, thiết kế thời trang,...", connfd, (struct sockaddr*) &cliaddr);
                                     optionVar = 5;
                                     count = 0;
                                 }
-                                else if (count == 2) {
+                                else if (count > 22 && count <= 24) {
                                     sendMess("Bạn thuộc nhóm người ESTJ (Người giám sát - The Supervisor).\nESTJ là những người lễ nghi, thực tế, chăm chỉ và trách nhiệm cao với một bộ óc nhạy bén trong việc kinh doanh, tổ chức quản lý cũng như con mắt nhìn người. Họ làm việc có trật tự, quy tắc và một hệ thống phương pháp rõ ràng.\n=> Phù hợp với các công việc quản lý để có thể đưa ra những quyết định về chính sách, thủ tục", connfd, (struct sockaddr*) &cliaddr);
                                     optionVar = 5;
                                     count = 0;
                                 }
-                                else if (count == 2) {
+                                else if (count > 24 && count <= 26) {
                                     sendMess("Bạn thuộc nhóm người INFP (Người duy tâm - The Healer).\nINFP thường rất nhạy cảm, đồng cảm, có lòng vị tha và quan tâm đến sự phát triển của bản thân cũng như những người khác, và mong đợi mọi người cũng làm như vậy. Mang tư tưởng cá nhân nhưng cũng rất sáng tạo, linh hoạt và có hơi hướng nghệ thuật, và không hề phán xét trong việc đối xử với người khác.\n=> Phù hợp với các công việc tự chủ, sáng tạo, phù hợp với các giá trị cá nhân của họ để giúp đỡ, cải thiện hoàn cảnh cho người khác (chăm sóc sức khỏe, tâm lý học, xã hội học,...)", connfd, (struct sockaddr*) &cliaddr);
                                     optionVar = 5;
                                     count = 0;
                                 }
-                                else if (count == 2) {
+                                else if (count > 26 && count <= 28) {
                                     sendMess("Bạn thuộc nhóm người ISFP (Người nghệ sĩ - The Composer).\nISFP là những người hòa bình, thân thiện, dễ tính. Với phương châm sống là để tận hưởng những khoảnh khắc của cuộc sống, họ luôn lạc quan, vui vẻ và linh hoạt một cách tự phát với dòng chảy  để tận hưởng những gì cuộc sống mang lại. ISFP có tính thẩm mỹ cao, luôn tìm kiếm cái đẹp, họ đặc biệt xuất sắc trong việc sử dụng sự sáng tạo, tài năng tự nhiên trong nghệ thuật.\n=> Phù hợp với các công việc có môi trường làm việc hợp tác, lịch sự nơi họ có thể làm việc một cách yên tĩnh với sự hỗ trợ khi cần thiết (ca sĩ, nhạc sĩ, thiết kế thời trang, kiến trúc sư, thợ mộc, thợ may,...)", connfd, (struct sockaddr*) &cliaddr);
                                     optionVar = 5;
                                     count = 0;
                                 }
-                                else if (count == 2) {
+                                else if (count > 28 && count <= 30) {
                                     sendMess("Bạn thuộc nhóm người INFJ (Người cố vấn - The Counselors).\nINFJ là những người rất tận tâm và có định hướng rõ ràng, họ luôn tìm kiếm các ý nghĩa trong các mối quan hệ, ý tưởng và các sự kiện để mong muốn hiểu được bản thân và những người xung quanh. Bằng các kỹ năng trực quan, tầm nhìn và sự tự tin để phát triển cải thiện cuộc sống của mọi người.\n=> INFJ chú tâm đến điều mà họ thích làm nhất, đó là việc cải thiện tình trạng con người. Họ thích lập kế hoặch, tổ chức có quy trình, sáng tạo trong môi trường độc lập để thực hiện các sứ mệnh nhân đạo (giáo dục sức khỏe, tư vấn viên, nhà tâm lý học,...)", connfd, (struct sockaddr*) &cliaddr);
                                     optionVar = 5;
                                     count = 0;
                                 }
-                                else if (count == 2) {
+                                else if (count > 30 && count <= 32) {
                                     sendMess("Bạn thuộc nhóm người ISFJ (Người che chở - The Protector).\nISFJ thật sự đề cao đến việc duy trì trật tự và sự hài hòa trong mọi khía cạnh của cuộc sống, họ là những người kiên định, tỉ mỉ và có trách nhiệm trong công việc. Mặc dù là người sống hướng nội nhưng họ rất giỏi trong việc quan sát và định hướng con người, họ không chỉ nhớ rõ các chi tiết của những người xung quanh mà con nhạy bén trong việc theo dõi cảm xúc của người khác.\n=> ISFJ chú tâm đến điều mà họ thích làm nhất, đó là việc giúp đỡ người khác theo những cách thực tế, có tổ chức, có sự theo dõi quan sát và xem kết quả (giáo dục sức khỏe, tư vấn viên, luật sư, y tá,...)", connfd, (struct sockaddr*) &cliaddr);
                                     optionVar = 5;
                                     count = 0;
                                 }
-                                else if (count == 2) {
+                                else if (count > 32 && count <= 34) {
                                     sendMess("Bạn thuộc nhóm người ESTP (Người đề xướng - The Promoter).\nESTP là những người tích cực, có xu hướng thực hành để giải quyết vấn đề hơn là chỉ thảo luận về chúng.  ESTP thích tập trung vào các kết quả rõ ràng trước mắt hơn là suy nghĩ về những mục tiêu dài hạn. Họ có khả năng tháo nút thắt cho các vấn đề để mang người khác đồng hành với mình qua đó đem lại những điều tốt đẹp cho cuộc sống. Vì thế mà ESTP được gọi là những Promoter – Người đề xướng.\n=> ESTP là người có động lực với các vấn đề mang tính logic, họ thường chọn nghề nghiệp liên quan tới kỹ năng cơ khí, thể thao hoặc đàm phán đối ngoại. ESTP phù hợp với các nhóm ngành sau : Khoa học và đời sống, giáo dục, kinh doanh bán hàng tài chính, bảo trì và sửa chữa, sản xuất, kiến trúc sư, cảnh sát vệ sĩ bảo vệ, xây dựng,...", connfd, (struct sockaddr*) &cliaddr);
                                     optionVar = 5;
                                     count = 0;
                                 }
-                                else if (count == 2) {
+                                else if (count > 34 && count <= 36) {
                                     sendMess("Bạn thuộc nhóm người ENFP (Người dẫn dắt thành công - The Champion).\nENFP là những người sáng tạo, giàu năng lượng, đam mê  hứng thú với mọi người và khả năng của họ. ENFP luôn mang đến những ý tưởng, sinh lực và kích thích người khác phát triển bằng sự nhiệt tình trong những hơi thở của họ.  ENFP thích sự mới lạ, luôn lạc quan, hang hái và cảm xúc mạnh mẽ. Ho khát khao dành chiến thắng và chia sẻ kinh nghiệm của họ đến những người khác.\n=> Đúng với tính cách của một ENFP, khi họ tìm kiếm một công việc, họ luôn chú tâm đến điều mà họ thích làm nhất, đó là dùng óc sáng tạo của mình để mang lại lợi ích cho mọi người. Phù hợp với các nhóm ngành như sau: Nghệ thuật và giải trí, kinh doanh và bán hàng, khoa học(tâm lý học, xã hội học), giáo dục, chăm sóc sức khoẻ, lập trình viên :D,..", connfd, (struct sockaddr*) &cliaddr);
                                     optionVar = 5;
                                     count = 0;
                                 }
-                                else if (count == 2) {
-                                    sendMess("Bạn thuộc nhóm người ISTJ(Người kiểm duyệt - The Inspector.\nISTJ là mẫu người của sự logic, có tổ chức, hợp lý và nghiêm túc, thích giữ cho cuộc sống và môi trường làm việc của họ được điều tiết tốt. Họ sống khá dè dặt và nghiêm nghị, thành công đến với họ nhờ sự thấu đáo và đáng tin cậy. ISTJ sống rất thực tế và luôn có trách nhiệm. Là dạng người sống hướng nội nên cũng dễ hiểu khi các ISTJ gặp khó khăn trong việc đáp ứng nhu cầu chia sẻ cảm xúc với mọi người xung quanh nhưng không phải là dạng cô lập hoặc tách biệt hẳn với người khác. Nhìn chung, ISTJ là dạng người truyền thống, quy tắc, luôn quan tâm đến việc duy trì trật tự xã hội và các tiêu chuẩn.\nISTJ là những người tỉ mỉ, chi tiết và đáng tin tưởng trong công việc. Một công việc lý tưởng cho ISTJ phải đảm bảo các yếu tố logic, quy tắc rõ ràng. ISTJ phù hợp với các nhóm ngành sau: Dịch vụ cộng đồng và xã hội, giáo dục, pháp luật, bảo trì và sửa chữa, kiến trúc sư, lập trình viên, quản lý, văn phòng hành chính, kinh doanh bán hàng và tài chính,...", connfd, (struct sockaddr*) &cliaddr);
-                                    optionVar = 5;
-                                    count = 0;
-                                }
-                                else if (count == 2) {
-                                    sendMess("Bạn thuộc nhóm người ISTP (Người thợ thủ công - The Crafter).\nISTP rất giỏi về các vấn đề cơ khí, sửa chữa, khắc phục sự cố và có xu hướng nghiên cứu cách mọi thứ hoạt động. Họ độc lập, logic, linh hoạt và dễ thích nghi, vì vậy họ rất giỏi ứng phó và tìm kiếm các giải pháp thực tế cho các vấn đề trong tầm tay cũng như các tình huống khẩn cấp. ISTP làm việc khá độc lập, tách rời và có phần khép kín, họ muốn được làm việc một cách tự do trong một không gian cá nhân để có thể đi theo sự dẫn dắt của chính bản thân mình.\nISTP là dạng người thích làm việc trong môi trường chuyên môn kỹ thuật, đam mê làm chủ và điều khiển các công cụ, thiết bị cơ khí hoặc các công cụ kinh doanh, công nghệ hiện đại. Phù hợp với các nhóm ngành sau đây: Phân tích tài chính, chứng khoán, nhà kinh tế, nhà sinh vật học - địa chất học, cảnh sát - sỹ quan, dịch vụ sức khoẻ - chăm sóc cá nhân(PT, bảo mẫu, y tá,...), kiến trúc sư - thợ mộc - thợ may - đầu bếp, phi công - thuỷ thủ, IT,..", connfd, (struct sockaddr*) &cliaddr);
-                                    optionVar = 5;
-                                    count = 0;
-                                }
-                                else if (count == 2) {
+                                else if (count > 36 && count <= 38) {
                                     sendMess("Bạn thuộc nhóm người INTJ (Người quân sư - The Mastermind).\nINTJ có một niềm đam mê mạnh mẽ với việc phân tích, giải quyết vấn đề, cải thiện các hệ thống và quy trình bằng các ý tưởng sáng tạo của họ. Sự độc lập trong tính cách và tư tưởng đôi khi khiến INTJ bị xa cách nhưng họ luôn là những đối tác trung thành. INTJ nhận thức về các hệ thống và lên chiến lược cho nó, và thông thường thì mọi thứ sẽ được định hướng rõ ràng như trên một bàn cờ. Với khả năng tư duy logic, sự tự tin và tài năng, The Mastermind hoàn toàn có thể đảm nhận vai trò lãnh đạo, cố vấn chiến lược tài ba.\nINTJ vượt trội trong việc tạo ra và thực hiện các giải pháp sáng tạo cho các vấn đề cần phải phân tích. Họ thường thích làm việc độc lập hoặc một nhóm nhỏ, thực hiện các bước chiến lược và đo lường để tạo ra thay đổi. Phù hợp với các nhóm ngành sau: kinh doanh - tài chính, toán học, kiến trúc - kỹ thuật, nghệ thuật - truyền thông, chăm sóc sức khoẻ, giải trí và thể thao, IT, pháp luật,..", connfd, (struct sockaddr*) &cliaddr);
                                     optionVar = 5;
                                     count = 0;
                                 }
-                                else if (count == 2) {
+                                else if (count > 38 && count <= 40) {
+                                    sendMess("Bạn thuộc nhóm người ISTJ(Người kiểm duyệt - The Inspector.\nISTJ là mẫu người của sự logic, có tổ chức, hợp lý và nghiêm túc, thích giữ cho cuộc sống và môi trường làm việc của họ được điều tiết tốt. Họ sống khá dè dặt và nghiêm nghị, thành công đến với họ nhờ sự thấu đáo và đáng tin cậy. ISTJ sống rất thực tế và luôn có trách nhiệm. Là dạng người sống hướng nội nên cũng dễ hiểu khi các ISTJ gặp khó khăn trong việc đáp ứng nhu cầu chia sẻ cảm xúc với mọi người xung quanh nhưng không phải là dạng cô lập hoặc tách biệt hẳn với người khác. Nhìn chung, ISTJ là dạng người truyền thống, quy tắc, luôn quan tâm đến việc duy trì trật tự xã hội và các tiêu chuẩn.\nISTJ là những người tỉ mỉ, chi tiết và đáng tin tưởng trong công việc. Một công việc lý tưởng cho ISTJ phải đảm bảo các yếu tố logic, quy tắc rõ ràng. ISTJ phù hợp với các nhóm ngành sau: Dịch vụ cộng đồng và xã hội, giáo dục, pháp luật, bảo trì và sửa chữa, kiến trúc sư, lập trình viên, quản lý, văn phòng hành chính, kinh doanh bán hàng và tài chính,...", connfd, (struct sockaddr*) &cliaddr);
+                                    optionVar = 5;
+                                    count = 0;
+                                }
+                                else if (count > 40 && count <= 43) {
+                                    sendMess("Bạn thuộc nhóm người ISTP (Người thợ thủ công - The Crafter).\nISTP rất giỏi về các vấn đề cơ khí, sửa chữa, khắc phục sự cố và có xu hướng nghiên cứu cách mọi thứ hoạt động. Họ độc lập, logic, linh hoạt và dễ thích nghi, vì vậy họ rất giỏi ứng phó và tìm kiếm các giải pháp thực tế cho các vấn đề trong tầm tay cũng như các tình huống khẩn cấp. ISTP làm việc khá độc lập, tách rời và có phần khép kín, họ muốn được làm việc một cách tự do trong một không gian cá nhân để có thể đi theo sự dẫn dắt của chính bản thân mình.\nISTP là dạng người thích làm việc trong môi trường chuyên môn kỹ thuật, đam mê làm chủ và điều khiển các công cụ, thiết bị cơ khí hoặc các công cụ kinh doanh, công nghệ hiện đại. Phù hợp với các nhóm ngành sau đây: Phân tích tài chính, chứng khoán, nhà kinh tế, nhà sinh vật học - địa chất học, cảnh sát - sỹ quan, dịch vụ sức khoẻ - chăm sóc cá nhân(PT, bảo mẫu, y tá,...), kiến trúc sư - thợ mộc - thợ may - đầu bếp, phi công - thuỷ thủ, IT,..", connfd, (struct sockaddr*) &cliaddr);
+                                    optionVar = 5;
+                                    count = 0;
+                                }
+                                else if (count > 43 && count <= 46) {
                                     sendMess("Bạn thuộc nhóm người INTP (Người kiến trúc sư - The Architect).\nINTP là những cá nhân trầm tính, chu đáo, có niềm đam mê mãnh liệt với phân tích logic, hệ thống phức tạp và thiết kế. Họ thường tò mò và thích tìm hiểu về các hệ thống, lý thuyết phức tạp và cách mọi thứ hoạt động. INTP thông thường không phải kiểu người truyền thống, họ có những suy nghĩ riêng và không chạy theo đám đông.\nINTP là người hoạt động độc lập tốt hoặc một nhóm nhỏ đồng nghiệp có năng lực, thông minh và logic. Họ thích một môi trường linh hoạt, cho phép họ xử lý các vấn đề một cách sáng tạo, không bị ràng buộc bởi các quy tắc truyền thống. Họ phù hợp với các nhóm ngành sau đây: IT, kỹ sư kỹ thuật, khoa học, kinh doanh - tài chính, giải trí - nghệ thuật(nhiếp ảnh giam, biên tập viên, nhạc sĩ,..),..", connfd, (struct sockaddr*) &cliaddr);
                                     optionVar = 5;
                                     count = 0;
                                 }
-                                else if (count == 2) {
+                                else if (count > 46 && count <= 50) {
                                     sendMess("Bạn thuộc nhóm người ENTP (Người phát minh - The Inventor).\nENTP được mô tả là những người thông minh, lanh lợi, hướng ngoại, sáng tạo, linh hoạt và tháo vát. Họ luôn xuất sắc trong việc đưa ra các giải pháp mới mẻ và độc đáo trước các vấn đề khó khăn, thường thì họ không lên kế hoặch trước cho một dự án. ENTP cũng có một sự hiểu biết sâu sắc về cách mà mọi thứ cũng như các mối quan hệ hoạt động và làm cách nào để cải thiện chúng.\nENTP là người quan tâm đến việc áp dụng các giải pháp sáng tạo cho các vấn đề thách thức trong công việc nhằm mang lại hiệu quả tối ưu nhất có thể. Một môi trường luôn tạo sự thách thức trí tuệ, đòi hỏi liên tục sự nâng cao kiến thức cùng với những người đồng nghiệp thông minh là ưa thích đối với ENTP. Họ phù hợp với các nhóm ngành sau đây: Kinh doanh - lãnh đạo(quản lý kinh doanh, quản trị nhân sự, CEO,..), nghệ thuật - thiết kế(kiến trúc sư, sản xuất nghệ thuật,..), khoa học kỹ thuật,..", connfd, (struct sockaddr*) &cliaddr);
                                     optionVar = 5;
                                     count = 0;
